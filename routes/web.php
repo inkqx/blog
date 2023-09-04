@@ -29,13 +29,15 @@ Route::get('/admin', function () {
 })->name('admin');
 Route::middleware('auth')->group(function () {
     Route::resource('admin/post', PostController::class);
-    Route::resource('admin/tag', \App\Http\Controllers\Admin\TagController::class);
-    Route::get('admin/upload', [\App\Http\Controllers\Admin\UploadController::class,'index']);
+    Route::resource('admin/tag', \App\Http\Controllers\Admin\TagController::class, ['except' => 'show']);
+
+    // Route::get('admin/tag/{id}/edit', [\App\Http\Controllers\Admin\UploadController::class,'edit']);
+    Route::get('admin/upload', [\App\Http\Controllers\Admin\UploadController::class, 'index']);
 });
 
-Route::get('/login',[\App\Http\Controllers\Auth\LoginController::class,'showLoginForm'])->name('login');
-Route::post('/login',[\App\Http\Controllers\Auth\LoginController::class,'login']);
-Route::get('/logout',[\App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
+Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 //Auth::routes();
 //
