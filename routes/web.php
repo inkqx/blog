@@ -31,8 +31,14 @@ Route::middleware('auth')->group(function () {
     Route::resource('admin/post', PostController::class);
     Route::resource('admin/tag', \App\Http\Controllers\Admin\TagController::class, ['except' => 'show']);
 
+    // 文件上传管理
     // Route::get('admin/tag/{id}/edit', [\App\Http\Controllers\Admin\UploadController::class,'edit']);
     Route::get('admin/upload', [\App\Http\Controllers\Admin\UploadController::class, 'index']);
+    // 添加如下路由
+    Route::post('admin/upload/file', [\App\Http\Controllers\Admin\UploadController::class, 'uploadFile']);
+    Route::delete('admin/upload/file', [\App\Http\Controllers\Admin\UploadController::class, 'deleteFile']);
+    Route::post('admin/upload/folder', [\App\Http\Controllers\Admin\UploadController::class, 'createFolder']);
+    Route::delete('admin/upload/folder', [\App\Http\Controllers\Admin\UploadController::class, 'deleteFolder']);
 });
 
 Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
