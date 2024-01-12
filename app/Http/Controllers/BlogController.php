@@ -14,7 +14,7 @@ class BlogController extends Controller
         $posts = Post::query()->where('published_at', '<=', Carbon::now())
             ->orderBy('published_at', 'desc')
             ->paginate(config('blog.posts_per_page'));
-//        dd(compact('post'));
+        //        dd(compact('post'));
         return view('blog.index', compact('posts'));
     }
 
@@ -22,5 +22,15 @@ class BlogController extends Controller
     {
         $post = Post::query()->where('slug', $slug)->firstOrFail();
         return view('blog.post', ['post' => $post]);
+    }
+
+    function test(Request $request)
+    {
+        $id = $request->get('id');
+        $result = [
+            'id' => $id,
+            'msg' => '11111'
+        ];
+        return $result;
     }
 }
