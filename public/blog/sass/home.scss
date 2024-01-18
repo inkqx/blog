@@ -1,0 +1,40 @@
+$nav-color: #f90;
+
+nav {
+    $width: 100px;
+    width: $width;
+    color: $nav-color;
+}
+
+$primary-color: #333;
+$test-color: #000000;
+
+body {
+    background-color: $primary-color;
+    color: $primary-color;
+}
+
+// list
+$font-stack: ("Helvetica", "Arial", sans-serif);
+
+body {
+    font: 100% nth($font-stack, 1); // 获取list的值，索引从1开始，不是0
+}
+
+// map
+$breakpoints: (
+    small: 767px,
+    medium: 992px,
+    large: 1200px,
+);
+
+// 变量作为插入变量需要通过 #{} 引入，通过 map_get 函数从 Map 中获取值
+@media (min-width: #{map-get($breakpoints, small)}) {
+}
+
+$name: foo;
+$attr: border;
+
+p.#{$name} {
+    #{$attr}-color: #44b336;
+}

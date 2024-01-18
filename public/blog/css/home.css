@@ -1,0 +1,17 @@
+nav {
+  width: 100px;
+  color: #f90;
+}
+
+body {
+  background-color: #333;
+  color: #333;
+}
+
+body {
+  font: 100% "Helvetica";
+}
+
+p.foo {
+  border-color: #44b336;
+}

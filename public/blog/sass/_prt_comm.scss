@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+// 颜色
+$comm-color-dark-grey: #666;
+$comm-color-blue: #4385f5;
+
+$comm-padding-left: 9%;
+$comm-padding-right: 9%;
+
+// --- 函数：伪元素清除浮动
+@mixin cleanfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.clean_fix {
+    @include cleanfix();
+}
+
+// ---------- a标签 ----------
+// 无hover样式
+.init_a {
+    text-decoration: none;
+    color: $comm-color-dark-grey;
+}
+
+// 默认蓝色
+.init_a_blue {
+    text-decoration: none;
+    color: $comm-color-blue;
+}
+
+// hover蓝色
+.init_a_hblue {
+    @extend .init_a;
+    &:hover {
+        color: $comm-color-blue;
+    }
+}
+
+// 蓝底白字按钮样式
+.init_a_buttom {
+    @extend .init_a;
+    background-color: $comm-color-blue;
+    color: #ffffff;
+    border-radius: 2px;
+    padding: 3px 10px;
+}
+
+
+// li标签
+@mixin init_li{
+    list-style: none;
+    float: left;
+}

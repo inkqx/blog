@@ -1,0 +1,71 @@
+@import "_prt_comm";
+
+.box {
+    width: 100%;
+    line-height: 1;
+}
+
+// -------------top----------------
+.top {
+    font-size: 13px;
+    color: $comm-color-dark-grey;
+}
+
+.top_header {
+    background-color: #f5f5f5;
+    padding-left: $comm-padding-left;
+    height: 42px;
+}
+
+.head_left {
+    width: 33%;
+    float: left;
+    line-height: 42px;
+    a {
+        margin-right: 13px;
+    }
+    .login {
+        color: $comm-color-blue;
+    }
+}
+
+.head_right {
+    float: left;
+    li {
+        @include init_li;
+        border-right: #cfcfcf solid 1px;
+        a {
+            padding: 2px 12px;
+        }
+    }
+    .sp_li {
+        border-right: none;
+        .block_qr {
+            @extend .init_a_hblue;
+            margin-top: -1px;
+            :hover {
+                border: 1px;
+            }
+            i {
+                margin: -1px 10px 0px 0px;
+                font-style: italic;
+                img {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+.top_referrer {
+    line-height: 42px;
+    padding-left: $comm-padding-left;
+    float: left;
+    li {
+        @include init_li;
+        border-right: solid 1px;
+        a {
+            padding: 2px 12px;
+        }
+    }
+}
