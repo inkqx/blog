@@ -1,6 +1,15 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 
 .clean_fix::after {
@@ -19,6 +28,11 @@ body {
   color: #4385f5;
 }
 
+.init_a_white {
+  text-decoration: none;
+  color: #fff;
+}
+
 .init_a_hblue:hover, .head_right .sp_li .block_qr:hover {
   color: #4385f5;
 }
@@ -28,6 +42,21 @@ body {
   color: #ffffff;
   border-radius: 2px;
   padding: 3px 10px;
+}
+
+select {
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  /*很关键：将默认的select选择框样式清除*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /*留出一点位置，避免被文字覆盖*/
+  padding-right: 14px;
+}
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand {
+  display: none;
 }
 
 .box {
@@ -60,6 +89,7 @@ body {
 
 .head_right {
   float: left;
+  margin-top: 13px;
 }
 .head_right li {
   list-style: none;
@@ -75,9 +105,6 @@ body {
 .head_right .sp_li .block_qr {
   margin-top: -1px;
 }
-.head_right .sp_li .block_qr :hover {
-  border: 1px;
-}
 .head_right .sp_li .block_qr i {
   margin: -1px 10px 0px 0px;
   font-style: italic;
@@ -87,15 +114,138 @@ body {
 }
 
 .top_referrer {
-  line-height: 42px;
-  padding-left: 9%;
+  padding: 20px 9%;
+  font-size: 14px;
+}
+.top_referrer p {
   float: left;
 }
-.top_referrer li {
+.top_referrer ul {
+  float: left;
+  padding: 0;
+}
+.top_referrer ul li {
   list-style: none;
   float: left;
   border-right: solid 1px;
 }
-.top_referrer li a {
-  padding: 2px 12px;
+.top_referrer ul li a {
+  padding: 2px 13px;
+}
+.top_referrer ul .sp_li {
+  border: none;
+}
+
+.top_center {
+  padding-left: 9%;
+}
+.top_center .logo {
+  float: left;
+  height: 70px;
+}
+.top_center .search {
+  float: left;
+  margin: 10px 80px;
+  width: 33%;
+  height: 40px;
+  line-height: 40px;
+  border: solid 2px #4385f5;
+}
+.top_center .search .search_type {
+  float: left;
+  border-right: 1px solid #fff;
+  width: 100px; /*IE6 only*/
+  font-size: 14px;
+}
+.top_center .search .search_type a {
+  color: #000;
+  display: block;
+  padding: 0 15px;
+}
+.top_center .search .search_type a:hover {
+  text-decoration: none;
+  background: url();
+}
+.top_center .search .search_type i {
+  position: absolute;
+  margin-top: -23px;
+  margin-left: 75px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #333333 transparent transparent transparent;
+}
+.top_center .search .search_type:hover i {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transition: transform 0.5s;
+}
+.top_center .search .search_type ul {
+  display: none;
+  position: absolute;
+  width: 100px;
+}
+.top_center .search .search_type li {
+  border: 1px solid #dddcdc;
+  background-color: #fff;
+  width: 100%; /*IE6 only*/
+  text-align: center;
+}
+.top_center .search input {
+  border: none;
+  border-left: 1px solid #dddcdc;
+  height: 25px;
+  padding-left: 10px;
+  font-size: 14px;
+  width: 50%;
+  color: #979797;
+  caret-color: #979797;
+}
+.top_center .search input:focus::-moz-placeholder {
+  opacity: 0;
+}
+.top_center .search input:focus::placeholder {
+  opacity: 0;
+}
+.top_center .search #search {
+  float: right;
+  border: none;
+  width: 100px;
+  height: 40px;
+  background-color: #4385f5;
+  color: #fff;
+  font-size: 18px;
+}
+
+.nav {
+  height: 60px;
+  line-height: 60px;
+  background-color: #4385f5;
+  padding-left: 9%;
+}
+.nav li {
+  float: left;
+  color: #fff;
+  width: 10%;
+  list-style: none;
+  position: relative;
+}
+.nav li a {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+}
+.nav li::after {
+  content: "";
+  width: 1px;
+  height: 14px;
+  display: inline-block;
+  position: absolute;
+  right: -1px;
+  top: 23px;
+  background-color: #fff;
+}
+.nav li:hover a {
+  background-color: #1b62dc;
 }

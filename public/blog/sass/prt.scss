@@ -10,13 +10,12 @@
     font-size: 13px;
     color: $comm-color-dark-grey;
 }
-
+// 顶栏
 .top_header {
     background-color: #f5f5f5;
     padding-left: $comm-padding-left;
     height: 42px;
 }
-
 .head_left {
     width: 33%;
     float: left;
@@ -28,9 +27,9 @@
         color: $comm-color-blue;
     }
 }
-
 .head_right {
     float: left;
+    margin-top: 13px;
     li {
         @include init_li;
         border-right: #cfcfcf solid 1px;
@@ -43,9 +42,6 @@
         .block_qr {
             @extend .init_a_hblue;
             margin-top: -1px;
-            :hover {
-                border: 1px;
-            }
             i {
                 margin: -1px 10px 0px 0px;
                 font-style: italic;
@@ -56,16 +52,147 @@
         }
     }
 }
-
+// 产品推荐
 .top_referrer {
-    line-height: 42px;
+    // line-height: 42px;
+    padding: 20px $comm-padding-left;
+    font-size: 14px;
+    p {
+        float: left;
+    }
+    ul {
+        float: left;
+        padding: 0;
+        li {
+            @include init_li;
+            border-right: solid 1px;
+            // height: 42px;
+            a {
+                padding: 2px 13px;
+            }
+        }
+        .sp_li {
+            border: none;
+        }
+    }
+}
+// logo和搜索
+.top_center {
     padding-left: $comm-padding-left;
-    float: left;
+    .logo {
+        float: left;
+        height: 70px;
+    }
+    .search {
+        float: left;
+        margin: 10px 80px;
+        width: 33%;
+        height: 40px;
+        line-height: 40px;
+        border: solid 2px $comm-color-blue;
+
+        .search_type {
+            float: left;
+            border-right: 1px solid #fff;
+            width: 100px; /*IE6 only*/
+            font-size: 14px;
+            a {
+                color: #000;
+                display: block;
+                padding: 0 15px;
+                // width: 80px;
+                &:hover {
+                    text-decoration: none;
+                    background: url();
+                }
+            }
+            i {
+                position: absolute;
+                margin-top: -23px;
+                margin-left: 75px;
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 5px 5px 0 5px;
+                border-color: #333333 transparent transparent transparent;
+            }
+            &:hover i {
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                transition: transform 0.5s;
+            }
+            ul {
+                display: none;
+                position: absolute;
+                width: 100px;
+            }
+            li {
+                border: 1px solid $comm-color-light-grey;
+                background-color: #fff;
+                width: 100%; /*IE6 only*/
+                text-align: center;
+            }
+        }
+
+        input {
+            border: none;
+            border-left: 1px solid $comm-color-light-grey;
+            height: 25px;
+            padding-left: 10px;
+            font-size: 14px;
+            width: 50%;
+            color: $comm-color-grey;
+            caret-color: $comm-color-grey;
+            &:focus::placeholder {
+                opacity: 0;
+            }
+        }
+
+        #search {
+            float: right;
+            border: none;
+            width: 100px;
+            height: 40px;
+            background-color: $comm-color-blue;
+            color: #fff;
+            font-size: 18px;
+        }
+    }
+}
+
+// 大导航
+.nav {
+    height: 60px;
+    line-height: 60px;
+    background-color: $comm-color-blue;
+    padding-left: $comm-padding-left;
     li {
-        @include init_li;
-        border-right: solid 1px;
+        float: left;
+        color: #fff;
+        width: 10%;
+        // text-align: center;
+        list-style: none;
+        position: relative;
         a {
-            padding: 2px 12px;
+            display: block;
+            font-size: 18px;
+            text-align: center;
+        }
+        &::after {
+            content: "";
+            width: 1px;
+            height: 14px;
+            // border-right: 1px solid #463030;
+            display: inline-block;
+            position: absolute;
+            right: -1px;
+            top: 23px;
+            background-color: #fff;
+        }
+        &:hover {
+            a {
+                background-color: #1b62dc;
+            }
         }
     }
 }

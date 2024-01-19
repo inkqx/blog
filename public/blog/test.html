@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            /* 本盒子用来模拟需要添加三角的表单、下拉链接 */
+            position: relative;
+            width: 235px;
+            height: 35px;
+            border: 1px solid black;
+        }
+
+        /* after伪元素 */
+        div::after {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            transform: rotate(45deg);
+            /* 添加过渡 */
+            transition: all .4s;
+        }
+
+        div:hover::after {
+            transform: rotate(225deg);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+
+</body>
+
+</html>

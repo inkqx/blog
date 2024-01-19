@@ -2,10 +2,20 @@ body {
     margin: 0;
     padding: 0;
 }
+// 引入阿里图标库
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
 
 // 颜色
-$comm-color-dark-grey: #666;
 $comm-color-blue: #4385f5;
+
+$comm-color-dark-grey: #666;
+$comm-color-grey: #979797;
+$comm-color-light-grey: #dddcdc;
 
 $comm-padding-left: 9%;
 $comm-padding-right: 9%;
@@ -36,6 +46,12 @@ $comm-padding-right: 9%;
     color: $comm-color-blue;
 }
 
+// 默认白色
+.init_a_white {
+    text-decoration: none;
+    color: #fff;
+}
+
 // hover蓝色
 .init_a_hblue {
     @extend .init_a;
@@ -53,9 +69,21 @@ $comm-padding-right: 9%;
     padding: 3px 10px;
 }
 
-
 // li标签
-@mixin init_li{
+@mixin init_li {
     list-style: none;
     float: left;
 }
+
+// --下拉选框---
+select {
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*留出一点位置，避免被文字覆盖*/
+    padding-right: 14px;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }

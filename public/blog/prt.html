@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>聚焦-xxxx</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/prt.css">
 </head>
 
 <body>
     <div class="box">
-        <div class="top">
+        <div class="top clean_fix">
             <div class="top_header clean_fix">
                 <div class="head_left">
                     <a class="init_a_hblue welcome" href="home.html">测试测试网欢迎您！</a>
@@ -34,13 +35,17 @@
                         <li><a class="init_a_hblue" href="">人才</a></li>
                         <li><a class="init_a_hblue" href="">样本</a></li>
                         <li><a class="init_a_hblue" href="">网络课堂</a></li>
-                        <li class="sp_li"><a class="block_qr" href=""><i><img src="https://www.chem17.com/images/video/version/2021/mobile.png" alt=""></i>手机版</a></li>
-                        <li class="sp_li"><a class="block_qr" href=""><i><img src="https://www.chem17.com/images/video/version/2021/weixin.png" alt=""></i>官方客户端</a></li>
+                        <li class="sp_li"><a class="block_qr" href=""><i><img
+                                        src="https://www.chem17.com/images/video/version/2021/mobile.png"
+                                        alt=""></i>手机版</a></li>
+                        <li class="sp_li"><a class="block_qr" href=""><i><img
+                                        src="https://www.chem17.com/images/video/version/2021/weixin.png"
+                                        alt=""></i>官方客户端</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="top_referrer">
-                产品推荐：
+            <div class="top_referrer clean_fix">
+                <p>产品推荐：</p>
                 <ul>
                     <li><a class="init_a_hblue" href="">气相</a></li>
                     <li><a class="init_a_hblue" href="">气相</a></li>
@@ -51,15 +56,48 @@
                     <li><a class="init_a_hblue" href="">气相</a></li>
                     <li><a class="init_a_hblue" href="">气相</a></li>
                     <li><a class="init_a_hblue" href="">气相</a></li>
-                    <li><a class="init_a_hblue" href="">气相</a></li>
+                    <li class="sp_li"><a class="init_a_hblue" href="">气相</a></li>
                 </ul>
             </div>
             <div class="top_center">
-                <div class="logo"></div>
-                <div class="search"></div>
+                <div class="logo">
+                    <img src="imgs/logo.jpg" alt="">
+                    <a href=""></a>
+                    <a href=""></a>
+                </div>
+                <form class="search">
+                    <!-- <select name="行业选择" id="searchItem">
+                        <option value="行业视频">行业视频</option>
+                        <option value="企业视频">企业视频</option>
+                    </select> -->
+                    <li class="search_type" id="search_type">
+                        <a class="init_a" href="javascript:;" target="_blank">选择行业</a>
+                        <i></i>
+                        <ul id="sub_03">
+                            <li><a href="javascript:;" target="_blank">行业视频</a></li>
+                            <li><a href="javascript:;" target="_blank">企业视频</a></li>
+                        </ul>
+                    </li>
+                    <input type="text" placeholder="请输入关键字搜索">
+                    <button id="search">
+                        <i><svg class="icon" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg></i>搜索
+                    </button>
+                </form>
             </div>
         </div>
-        <div class="nav"></div>
+        <div class="nav">
+            <ul>
+                <li><a class="init_a_white" href="">视频首页</a></li>
+                <li><a class="init_a_white" href="">企业录播</a></li>
+                <li><a class="init_a_white" href="">人物访谈</a></li>
+                <li><a class="init_a_white" href="">展会直播<i></i></a></li>
+                <li><a class="init_a_white" href="">展商视频</a></li>
+                <li><a class="init_a_white" href="">新品发布会</a></li>
+                <li><a class="init_a_white" href="">企业直播</a></li>
+                <li><a class="init_a_white" href="">仪器聚焦</a></li>
+                <li><a class="init_a_white" href="">网络课堂</a></li>
+            </ul>
+        </div>
         <div class="content">
             <div class="bread"></div>
             <div class="list">
@@ -79,5 +117,8 @@
         <div class="bottom"></div>
     </div>
 </body>
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="js/slide.js"></script>
+<script type="text/javascript" src="//at.alicdn.com/t/c/font_4417073_qbuf4wq3sp.js"></script>
 
 </html>
